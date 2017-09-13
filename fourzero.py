@@ -21,7 +21,9 @@ def primitive(pos):
 	elif pos == 1 or pos == 2:
 		return "WIN"
 
-def main(3, 5, 2, 1):
+def main():
 	solve(4, primitive, generate_moves(), do_move)
 if __name__ == '__main__':
 	main()
+
+#hello i am testing github hello this is a change
