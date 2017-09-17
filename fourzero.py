@@ -1,5 +1,3 @@
-from enum import Enum 
-DWLT = Enum('DWLT', 'Draw Win Loss Tie')
 def solve(init_pos, primitive, generate_moves, do_move):
 	if primitive(init_pos) == "Loss":
 		return False
@@ -8,8 +6,6 @@ def solve(init_pos, primitive, generate_moves, do_move):
 		b =solve(do_move(init_pos, i), primitive, generate_moves, do_move) 
 		a = a or not b
 	return a
-
-
 
 def generate_moves(pos):
 	assert pos > 0
@@ -26,12 +22,6 @@ def primitive(pos):
 		return "Loss"
 	else:
 		return "Undecided"
-	"""if pos == 0:
-		return False
-	elif pos == 1 or pos == 2:
-		return True
-	else:
-		return not(primitive(pos-1) and primitive(pos - 2))"""
 
 def main():
 	if solve(4, primitive, generate_moves, do_move):
