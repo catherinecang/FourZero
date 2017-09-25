@@ -9,7 +9,7 @@ def solve(init_pos, primitive, generate_moves, do_move):
 		return not branches(t)
 	def shortestdistance(t):
 		if isleaf(t):
-			return 0
+			return 1
 		else:
 			return min([shortestdistance(b) for b in branches(t)]) + 1
 	def createtree(n):
